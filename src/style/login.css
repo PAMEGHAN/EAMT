@@ -1,0 +1,24 @@
+.form{
+    text-align: center;
+}
+.form label {
+     margin-top: 1rem;
+     margin-bottom: 1rem;
+      display: block;
+    }
+.form input {
+     border: 1px solid #ddd;
+     padding: 0.5rem;
+}
+.form button { 
+    margin: 2rem;
+}
+.form h1{
+    text-align: center;
+    align-items: center;
+}
+body{
+     background-image: url("C:\Users\pameghan\reactdemos\eamt\src\images\Home.jpeg");
+      background-repeat:no-repeat ;
+background-size:cover;
+}

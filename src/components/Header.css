@@ -1,0 +1,23 @@
+.header{
+    width:100%;
+     height:5rem;
+     padding:0.25rem;
+      display:flex;
+       align-items:center;
+       justify-content:space-between;
+    }
+.header ul{
+    list-style:none;
+     margin:0;
+      padding:1rem;
+      color:white;
+    }
+.header li{
+    
+    text-decoration:underline;
+     padding:8px;
+      display:inline-block;
+    }
+.header h1{
+        text-align:center;
+    }
