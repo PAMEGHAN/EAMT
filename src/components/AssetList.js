@@ -3,6 +3,7 @@ import { deleteAsset } from '../actions/Asset';
 import '../style/AssetList.css';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+import '../style/Button.css';
 
 export default function AssetList(props){
 
@@ -17,7 +18,8 @@ export default function AssetList(props){
          props.setCurrentAsset(asset);
          }
         
-          return(<>
+          return(< div className="container">
+            <h2>Asset List</h2>
           <table border='2'>
             <thead><tr>
                  <th>Item-Name</th>
@@ -48,7 +50,7 @@ export default function AssetList(props){
                     </tbody>
                      </table>
         <form>
-        <input type="button" value="Go back!" onClick={clickHandler} />
+        <h3 className="d-1" onClick={clickHandler}>Go Back</h3>
        </form>
-       </>
+       </div>
 )}

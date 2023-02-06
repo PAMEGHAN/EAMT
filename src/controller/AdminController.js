@@ -7,6 +7,7 @@ import EmployeeDetails from '../components/EmployeeDetails';
 import { useDispatch } from 'react-redux';
 import { retrieveEmployeeById } from '../actions/Employee';
 import apiClient from '../api/http-common';
+import AssetDetails from '../components/AssetDetails';
 
 
 function AdminController(props) {
@@ -20,29 +21,37 @@ function AdminController(props) {
         }
     },[]);
 
-    const  dispatch = useDispatch();
+    //const  dispatch = useDispatch();
 
     const employeeId = localStorage.getItem('employeeId');
     console.log(employeeId);
 
+   
     const [employee,setEmployee] = useState('');
+    const [asset,setAsset] = useState([]);
     
     useEffect(()=>{apiClient.get(`/view_employeeById/${employeeId}`).then((response)=>{
          setEmployee(response.data);
          props.setEmployeeDetails(response.data);
          })},[]);
-    
 
-    return(
+         useEffect(()=>{apiClient.get(`/getAssetByEmpId/${employeeId}`).then((response)=>{
+            setAsset(response.data);
+            })},[]);
+    
+            console.log(asset)
+
+    return(<>
         
         <div className='style'>
-        <EmployeeDetails employee ={employee}/>
+            <HeaderComponent/>      
+            <h1>Employee Asset Management Tool</h1>
             
-             <HeaderComponent>Employee Asset Management</HeaderComponent>
+        <EmployeeDetails employee ={employee}/>
 
+        <AssetDetails asset={asset}/>
     {admin && 
-         <div>
-       
+        <div> 
         <Link to ="/adminController/addEmployee">
             <h2>Add Employee</h2></Link>
         <Link to = "/adminController/addAsset">
@@ -51,10 +60,11 @@ function AdminController(props) {
             <h2>Employee List</h2></Link> 
          <Link to="/adminController/allAssets">
             <h2>Asset List</h2></Link>
-                </div>
+            </div>
+                
     }
     
-    </div>
+    </div></>
   )
     }
 

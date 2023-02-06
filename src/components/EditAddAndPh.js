@@ -2,7 +2,8 @@ import React,{ useState} from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { updateEmpAddressAndPhoneNo } from '../actions/Employee';
-
+import '../style/EmployeeDetails.css';
+import '../style/login.css';
 
 export default function EditAddAndPh(props){
     const dispatch=useDispatch();
@@ -34,11 +35,10 @@ export default function EditAddAndPh(props){
     alert("Address and PhoneNumber updated");
 }
 
-return(<>
+return(<div className="login-box">
     <form  className="form" onSubmit={submitHandler}>
         {error && <p>Please enter details</p>}
         <header><h1>Edit Employee Address And Phone_Number</h1></header>
-     
         <label>Employee_Id</label>
         <input type='number'
         name='empId'
@@ -69,12 +69,15 @@ return(<>
         name='role'
         value={employee.role}
        /><br></br>
-
-           <button onClick={submitHandler}>Update Employee</button>
-            <button className="button muted-button">Cancel</button>
-            <br></br>
+        <br></br>
+        
+           <a href="#" onClick={submitHandler}><span></span>
+           <span></span>
+           <span></span>Update Employee</a>
+           
+            
             
     </form>
-    </>
+    </div>
 )
 }

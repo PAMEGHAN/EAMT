@@ -2,6 +2,7 @@ import { useDispatch } from 'react-redux';
 import { deleteEmployee } from '../actions/Employee';
 import '../style/EmployeeList.css';
 import { Link, useNavigate } from 'react-router-dom';
+import '../style/Button.css';
 
 export default function EmployeeList(props){
 
@@ -15,7 +16,8 @@ export default function EmployeeList(props){
    const editHandler = (employee) => {
      props.setCurrentEmployee(employee);
     }
-     return(<>
+     return(< div className="container">
+      <h2>Employee List</h2>
        <table border='2'> 
        <thead>
         <tr>
@@ -50,7 +52,8 @@ export default function EmployeeList(props){
                   )}</tbody>
                  </table>
                  <form>
- <input type="button" value="Go back!" onClick={clickHandler} />
+                  <h3 className="d-1" onClick={clickHandler}>Go Back</h3>
+                
 </form>
-                 </>
+                 </div>
 )}

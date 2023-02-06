@@ -1,3 +1,16 @@
 .style{
     text-align: center;
+    padding: auto;
+    
+}
+body{
+    width: auto;
+    background-image: url("C:\Users\pameghan\reactdemos\eamt\src\images\Home.jpeg");
+    background-repeat:no-repeat ;
+    background-size:cover;
+    margin: auto;
+}
+
+h1{
+    margin-bottom: 2rem;
 }

@@ -3,27 +3,36 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { addEmployee } from "../actions/Employee";
 import '../style/AddEmployeeForm.css';
+import '../style/EmployeeDetails.css';
+import '../style/login.css';
 
 export default function AddEmployeeForm(){
 
     const[error,setError]=useState(false);
     const dispatch = useDispatch();
 
-    const initialFormState = {
+    const initialEmployeeFormState = {
         empId:0,
         empName:'',
         empAddress:'',
         contactNo:0,
         role:'',
+        asset:{
+            itemNum:0
+        }
     }
 
-    const [employee,setEmployee]= useState(initialFormState);
+
+    
+    const [employee,setEmployee]= useState(initialEmployeeFormState);
     const handleInputChange=(event)=>{
     const {name,value} = event.target;
     setEmployee({...employee,[name]:value});
     }
     
  const navigate=useNavigate();
+
+ 
 
     const submitHandler=(event)=>{
         event.preventDefault();
@@ -38,16 +47,18 @@ export default function AddEmployeeForm(){
             navigate("/adminController");
         }
         //props.addEmployee(employee);
+        
         dispatch(addEmployee(employee));
+       // props.addEmployee(employee);
+        setEmployee(initialEmployeeFormState)
         console.log({employee});
         alert("Employee Added Successfully")
         }
 
-        return(<>
+        return(<div className="login-box">
         <form className="form" onSubmit={submitHandler}>
-            {error && alert("Please Enter Employee Details")}
+            {error && <p>Please Enter Employee Details</p>}
             <header><h1>Add Employee Form</h1></header>
-
               <label>Employee-Name</label>
                 <input type='text'
                 name='empName'
@@ -72,10 +83,13 @@ export default function AddEmployeeForm(){
                 value={employee.role}
                 onChange={handleInputChange}/><br></br>
 
-                <button onClick={submitHandler}>Add New Employee</button>
+                
 
+                <a href="#" onClick={submitHandler}><span></span>
+                <span></span>
+                <span></span>Add New Employee</a>
             </form>
-            </>)
+            </div>)
 
 
 }

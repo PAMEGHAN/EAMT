@@ -1,7 +1,8 @@
-import { Button } from 'react-bootstrap';
-import  { Link } from 'react-router-dom';
+
 import './Header.css';
 import { useNavigate } from 'react-router-dom';
+import '../style/logout.css';
+
 
 
 function HeaderComponent() {
@@ -12,22 +13,26 @@ function HeaderComponent() {
     localStorage.removeItem('employeeId');
     navigate('/');
   }
+  
+ 
+  
 
-     return (<>
-         <header className='header'>
-         <h1>
-         </h1>
-         <nav>
-          <ul>
-            <li>
-              <input type="button" value="Home" onClick={clickHandler}/>
-            </li>
-            <li>
-              <input type="button" value="Logout" onClick={clickHandler}/>
-            </li>
+     return (<div className="body" >
+         <header  className="header">
+         <ul>
+          <li>
+          <h1>  </h1>
+          </li>
+           <li>
+              <input type="button" value="Home" className="logout" onClick={clickHandler}/>
+              </li>
+              <li>
+              <input type="button" value="Logout" className="logout" onClick={clickHandler}/>
+              </li>
+              
           </ul>
-         </nav>
+         
            </header>
-           </>
+           </div>
  );}
  export default HeaderComponent;

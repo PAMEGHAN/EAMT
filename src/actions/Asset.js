@@ -6,11 +6,11 @@ import {
   } from "./types";
 import  AssetService from "../services/AssetService";
 
-export const addAsset = ({ itemName,itemNum,serialNum,status}) => async (dispatch) => {
+export const addAsset = ({ itemName,itemNum,serialNum,status,employee}) => async (dispatch) => {
   try {
     
 
-    const res = await AssetService.create({ itemName,itemNum,serialNum,status});
+    const res = await AssetService.create({ itemName,itemNum,serialNum,status,employee});
       
     dispatch({
       type: ADD_ASSET,

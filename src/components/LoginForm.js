@@ -22,7 +22,7 @@ export default function LoginForm(props) {
 
             const submitHandler = async (event) => {
             event.preventDefault();
-              if(employeeName.trim() === '' || employeeId == 0 || employeeId < 0){
+              if(employeeName.trim() === '' || employeeId === 0 || employeeId < 0){
                   setError(true);
                 return;
                      }
@@ -31,30 +31,34 @@ export default function LoginForm(props) {
                          localStorage.setItem('adminLogin',response.data);
                          localStorage.setItem('employeeId',employeeId);
                          navigate("/adminController");
-                         }
-                         
+                      }
                         }
-    return(<>
+    return(<div className="login-box">
                             
 
                   <form className="form">
                    {error && <p>Please enter valid details</p>}
                         <div> <h1>Employee Asset Management Tool</h1></div>
-                              <label>UserId</label>
+                             <div className="user-box">
+                             <label>UserId</label><br></br>
                                 <input type='number' 
                                 value = {employeeId} 
-                               onChange={employeeIdChangeHandler}/><br></br>
-                                 
-                                              
-                                <label>Password</label>
+                               onChange={employeeIdChangeHandler}/>
+                              
+                                 </div>
+                                <div className="user-box">              
+                                <label>Password</label><br></br>
                                  <input type='password' 
                                   id='empName'               
                                  value={employeeName} 
                                  onChange={employeeNameChangeHandler}/><br></br>
-                                                 
+                                    </div>             
                                                   
-                              <button onClick={submitHandler}>SignIn</button>   <button>Cancel</button>
-                                                    </form></>
+                              <a href="#" onClick={submitHandler}><span></span>
+                              <span></span>
+                              <span></span>
+                              SignIn</a>  
+                      </form></div>
                         
                         )
 }

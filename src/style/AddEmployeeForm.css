@@ -1,5 +1,9 @@
 body{
-     background-image: url("C:\Users\pameghan\reactdemos\eamt\src\images\Home.jpeg");}
+     background-image: url("C:\Users\pameghan\reactdemos\eamt\src\images\Home.jpeg");
+    width: auto;
+    margin: auto;
+}
+
 .form{
     text-align: center;}
 .form label {

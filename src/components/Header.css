@@ -1,23 +1,34 @@
 .header{
-    width:100%;
-     height:5rem;
-     padding:0.25rem;
-      display:flex;
-       align-items:center;
-       justify-content:space-between;
+    width:auto;
+    height:5rem;
+    padding:0rem;
+    display:flexbox;
+    align-items:right;
+    justify-content:space-between;
+    text-align:right;
+    
+
     }
 .header ul{
     list-style:none;
      margin:0;
-      padding:1rem;
-      color:white;
+    
+      color:rgb(15, 15, 15);
+      align-items: right;
     }
 .header li{
     
-    text-decoration:underline;
+    text-decoration:dashed;
      padding:8px;
       display:inline-block;
     }
 .header h1{
-        text-align:center;
+        text-align:left;
+        margin-bottom: 3rem;
+        background-color: rgb(232, 177, 177);
+    }
+
+    body{
+        width: auto;
+        margin: auto;
     }

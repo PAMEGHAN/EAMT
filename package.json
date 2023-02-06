@@ -17,6 +17,7 @@
     "react": "^18.2.0",
     "react-axios": "^2.0.6",
     "react-bootstrap": "^2.7.0",
+    "react-crud-icons": "^1.2.2",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.5",
     "react-router-dom": "^6.8.0",

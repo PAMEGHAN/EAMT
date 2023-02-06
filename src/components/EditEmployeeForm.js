@@ -2,7 +2,8 @@ import React,{ useState} from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { updateEmployee } from '../actions/Employee';
-
+import '../style/EmployeeDetails.css';
+import '../style/login.css';
 
 export default function EditEmployeeForm(props){
     const dispatch=useDispatch();
@@ -33,9 +34,10 @@ export default function EditEmployeeForm(props){
     alert("Employee Name updated");
 }
 
-return(
+return(<div className="login-box">
     <form  className="form" onSubmit={submitHandler}>
         {error && <p>Please enter empoyee details</p>}
+       
         <header><h1>Edit Employee Form</h1></header>
          
         <label>Employee-Id</label>
@@ -52,11 +54,12 @@ return(
         onChange={handleInputChange}/><br></br>
 
         
-           <button onClick={submitHandler}>Update Employee</button>
-            <button className="button muted-button">Cancel</button>
-            <br></br>
-
+           <a href="#" onClick={submitHandler}><span></span>
+           <span></span>
+           <span></span>Update Employee</a>
             
+            <br></br> 
     </form>
+    </div>
 )
 }

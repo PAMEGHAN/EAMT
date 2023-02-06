@@ -2,6 +2,8 @@ import React,{useState} from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { updateAsset } from '../actions/Asset';
+import '../style/EmployeeDetails.css';
+import '../style/login.css';
 
 export default function EditAssetForm(props){
 
@@ -36,7 +38,7 @@ export default function EditAssetForm(props){
     }
     
 
-return(
+return(<div class="login-box">
     <form  className="form" onSubmit={submitHandler}>
         {error && <p>Please enter asset details</p>}
         <header><h1>Edit Asset Form</h1></header>
@@ -66,11 +68,13 @@ return(
         </select>
         <br></br>
 
-
-           <button onClick={submitHandler}>Update Asset</button>
-            <button className="button muted-button">Cancel</button>
-            <br></br>
-
+<br></br>
+           <a href="#" onClick={submitHandler}><span></span>
+           <span></span>
+           <span></span>Update Asset</a>
+            
+            
     </form>
+    </div>
 )
 }
